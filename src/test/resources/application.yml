@@ -1,0 +1,23 @@
+quarkus:
+  devservices:
+    enabled: false
+  datasource:
+    datasource1:
+      db-kind: h2
+      jdbc:
+        url: jdbc:h2:mem:datasource1
+    datasource2:
+      db-kind: h2
+      jdbc:
+        url: jdbc:h2:mem:datasource2
+  hibernate-orm:
+    datasource1:
+      datasource: "datasource1"
+      packages: org.example.entity.datasource1
+      database:
+        generation: drop-and-create
+    datasource2:
+      datasource: "datasource2"
+      packages: org.example.entity.datasource2
+      database:
+        generation: drop-and-create
