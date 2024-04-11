@@ -1,15 +1,19 @@
 quarkus:
   devservices:
     enabled: false
+  transaction-manager:
+    enable-recovery: true
   datasource:
     datasource1:
       db-kind: h2
       jdbc:
         url: jdbc:h2:mem:datasource1
+        transactions: xa
     datasource2:
       db-kind: h2
       jdbc:
         url: jdbc:h2:mem:datasource2
+        transactions: xa
   hibernate-orm:
     datasource1:
       datasource: "datasource1"
